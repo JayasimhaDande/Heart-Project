@@ -1,0 +1,96 @@
+/* Set background to a soft color */
+body {
+    background-color: #ffebf0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Center the container */
+.container {
+    text-align: center;
+}
+
+/* Style the heart shape */
+.heart {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: rotate(-45deg);
+    position: relative;
+    margin: 20px auto;
+    animation: beat 1.5s infinite alternate; /* Heart beat animation */
+}
+
+.heart:before, .heart:after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart:before {
+    left: 50px;
+    top: 0;
+}
+
+.heart:after {
+    left: 0;
+    top: -50px;
+}
+
+/* Heart beat animation */
+@keyframes beat {
+    0% {
+        transform: rotate(-45deg) scale(1);
+    }
+    100% {
+        transform: rotate(-45deg) scale(1.2);
+    }
+}
+
+/* Style for the heading text */
+h1 {
+    font-size: 2.5rem;
+    color: #ff3366;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Style the button */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff3366;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover */
+}
+
+button:hover {
+    background-color: #ff1a55;
+    transform: scale(1.1); /* Slightly enlarge the button */
+    box-shadow: 0 5px 15px rgba(255, 51, 102, 0.3); /* Add shadow on hover */
+}
+
+button:active {
+    transform: scale(1); /* Button returns to original size on click */
+}
+
+/* Add smooth transition effect to the message */
+h1 {
+    transition: color 0.3s ease-in-out;
+}
+
+button:focus {
+    outline: none;
+}
